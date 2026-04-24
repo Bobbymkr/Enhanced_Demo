@@ -25,7 +25,7 @@ class TestBoundaryConditions(unittest.TestCase):
     
     def test_01_zero_vehicles_scenario(self):
         """Test: System behavior with zero vehicles"""
-        import simulation
+        import tests.basic_simulation as basic_simulation
         
         # Mock empty vehicle data
         with patch('simulation.vehicles', {
@@ -61,7 +61,7 @@ class TestBoundaryConditions(unittest.TestCase):
     
     def test_02_maximum_vehicles_scenario(self):
         """Test: System behavior with maximum vehicles"""
-        import simulation
+        import tests.basic_simulation as basic_simulation
         
         # Create maximum vehicle scenario
         max_vehicles_per_lane = 100
@@ -113,7 +113,7 @@ class TestBoundaryConditions(unittest.TestCase):
     
     def test_03_extreme_signal_timings(self):
         """Test: Extreme signal timing values"""
-        import simulation
+        import tests.basic_simulation as basic_simulation
         
         # Test minimum signal time
         with patch('simulation.defaultMinimum', 1):
@@ -180,7 +180,7 @@ class TestBoundaryConditions(unittest.TestCase):
     
     def test_05_extreme_coordinate_values(self):
         """Test: System behavior with extreme coordinate values"""
-        import simulation
+        import tests.basic_simulation as basic_simulation
         
         # Test extreme coordinate values
         extreme_coords = [
@@ -390,7 +390,7 @@ class TestInvalidInputHandling(unittest.TestCase):
     
     def test_02_invalid_configuration_values(self):
         """Test: Handling of invalid configuration values"""
-        import simulation
+        import tests.basic_simulation as basic_simulation
         
         # Test invalid configuration values
         invalid_configs = [
@@ -498,7 +498,7 @@ class TestSystemRecovery(unittest.TestCase):
     
     def test_01_graceful_shutdown(self):
         """Test: Graceful system shutdown"""
-        import simulation
+        import tests.basic_simulation as basic_simulation
         
         # Mock system components
         with patch('pygame.init'):
@@ -507,7 +507,7 @@ class TestSystemRecovery(unittest.TestCase):
                     # Test graceful shutdown
                     signals = []
                     for i in range(4):
-                        signal = simulation.TrafficSignal(0, 5, 20, 10, 60)
+                        signal = basic_simulation.TrafficSignal(0, 5, 20, 10, 60)
                         signals.append(signal)
                     
                     # Simulate shutdown signal
@@ -570,7 +570,7 @@ class TestSystemRecovery(unittest.TestCase):
     
     def test_03_state_consistency_after_failure(self):
         """Test: State consistency after failure"""
-        import simulation
+        import tests.basic_simulation as basic_simulation
         
         # Initial state
         initial_state = {

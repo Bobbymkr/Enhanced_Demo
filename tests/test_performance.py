@@ -197,7 +197,7 @@ class TestSimulationPerformance(unittest.TestCase):
     
     def test_01_frame_rate_performance(self):
         """Test: Simulation maintains 30+ FPS"""
-        import simulation
+        import tests.basic_simulation as basic_simulation
         
         # Mock pygame to avoid display issues
         with patch('pygame.init'):
@@ -209,7 +209,7 @@ class TestSimulationPerformance(unittest.TestCase):
                                 # Initialize simulation components
                                 signals = []
                                 for i in range(4):
-                                    signal = simulation.TrafficSignal(0, 5, 20, 10, 60)
+                                    signal = basic_simulation.TrafficSignal(0, 5, 20, 10, 60)
                                     signals.append(signal)
                                 
                                 # Test frame rendering performance
@@ -241,7 +241,7 @@ class TestSimulationPerformance(unittest.TestCase):
     
     def test_02_vehicle_count_performance(self):
         """Test: Performance with many vehicles"""
-        import simulation
+        import tests.basic_simulation as basic_simulation
         
         # Mock pygame
         with patch('pygame.init'):
@@ -290,7 +290,7 @@ class TestSimulationPerformance(unittest.TestCase):
     def test_03_memory_scaling_performance(self):
         """Test: Memory usage scales linearly with vehicle count"""
         try:
-            import simulation
+            import tests.basic_simulation as basic_simulation
             import psutil
             
             process = psutil.Process()
@@ -568,7 +568,7 @@ class TestPerformanceRegression(unittest.TestCase):
             shutil.rmtree(test_dir, ignore_errors=True)
         
         # Test simulation performance
-        import simulation
+        import tests.basic_simulation as basic_simulation
         with patch('pygame.init'):
             with patch('pygame.sprite.Group'):
                 with patch('pygame.display.set_mode'):

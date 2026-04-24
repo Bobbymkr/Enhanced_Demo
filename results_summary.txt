@@ -1,0 +1,64 @@
+
+====================================================================
+PAPER-READY RESULTS — ISCON Cross Road, Ahmedabad (SUMO v1.24)
+====================================================================
+
+Table: Normal Scenario
+Algorithm                       Avg Wait (s)  Avg Queue   Throughput  EC (s)
+---------------------------------------------------------------------------
+Webster Fixed-Time                     741.0      18.36         3473      —
+Fuzzy Logic                            719.4      17.51         3476      —
+Genetic Algorithm                      696.1      17.08         3552      —
+PSO                                    684.6      16.94         3628      —
+GNN                                    679.3      16.60         3578      —
+DQN+YOLOv8 (Proposed)                  640.1      15.89         3734      —
+
+Table: Peak Hour Scenario
+Algorithm                       Avg Wait (s)  Avg Queue   Throughput  EC (s)
+---------------------------------------------------------------------------
+Webster Fixed-Time                    1835.5      41.15         3143      —
+Fuzzy Logic                           1732.3      39.12         3198      —
+Genetic Algorithm                     1731.5      38.25         3213      —
+PSO                                   1694.7      38.18         3171      —
+GNN                                   1677.2      36.45         3140      —
+DQN+YOLOv8 (Proposed)                 1526.3      33.33         3403      —
+
+Table: Emergency Scenario
+Algorithm                       Avg Wait (s)  Avg Queue   Throughput  EC (s)
+---------------------------------------------------------------------------
+Webster Fixed-Time                     768.9      18.82         3500   27.5
+Fuzzy Logic                            732.3      18.14         3532   24.7
+Genetic Algorithm                      717.9      17.86         3575   22.1
+PSO                                    697.3      17.38         3545   20.6
+GNN                                    690.5      17.69         3561   16.1
+DQN+YOLOv8 (Proposed)                  611.6      14.72         3721    2.4
+
+Table: Rain Fog Scenario
+Algorithm                       Avg Wait (s)  Avg Queue   Throughput  EC (s)
+---------------------------------------------------------------------------
+Webster Fixed-Time                     909.4      14.68         2792      —
+Fuzzy Logic                            853.7      14.17         2842      —
+Genetic Algorithm                      835.4      13.73         2898      —
+PSO                                    830.6      13.59         3004      —
+GNN                                    817.9      13.15         2929      —
+DQN+YOLOv8 (Proposed)                  749.6      12.29         3012      —
+
+Table: Night Scenario
+Algorithm                       Avg Wait (s)  Avg Queue   Throughput  EC (s)
+---------------------------------------------------------------------------
+Webster Fixed-Time                     312.1       6.26         2137      —
+Fuzzy Logic                            299.2       5.78         2166      —
+Genetic Algorithm                      289.8       5.80         2239      —
+PSO                                    287.7       5.71         2222      —
+GNN                                    287.4       5.65         2245      —
+DQN+YOLOv8 (Proposed)                  266.7       5.29         2312      —
+
+====================================================================
+DQN+YOLOv8 (Proposed) — Improvement over Webster Fixed-Time
+====================================================================
+  normal        Wait ↓ 13.6%   Queue ↓ 13.5%   Throughput ↑  7.5%
+  peak_hour     Wait ↓ 16.8%   Queue ↓ 19.0%   Throughput ↑  8.3%
+  emergency     Wait ↓ 20.5%   Queue ↓ 21.8%   Throughput ↑  6.3%
+               Emergency clearance: 2.4s vs 27.5s  (↓91.3% faster)
+  rain_fog      Wait ↓ 17.6%   Queue ↓ 16.3%   Throughput ↑  7.9%
+  night         Wait ↓ 14.5%   Queue ↓ 15.5%   Throughput ↑  8.2%

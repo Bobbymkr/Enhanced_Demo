@@ -68,7 +68,7 @@ class TestDetectionSimulationPipeline(unittest.TestCase):
     
     def test_02_simulation_receives_detection_data(self):
         """Test that simulation can receive detection data"""
-        import simulation
+        import tests.basic_simulation as basic_simulation
         
         # Mock detection results
         mock_detection_results = {

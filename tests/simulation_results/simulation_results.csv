@@ -1,0 +1,31 @@
+Algorithm,Scenario,Avg Wait Time (s),Avg Queue Length,Throughput (veh/hr),Fuel Index,Emerg Clear (s)
+Webster Fixed-Time,Normal Urban Traffic,766.17,742.68,3450.5,7.6617,
+Random Control,Normal Urban Traffic,770.51,741.55,3532.0,7.7051,
+Fuzzy Logic,Normal Urban Traffic,786.04,761.02,3543.5,7.8604,
+Genetic Algorithm,Normal Urban Traffic,812.91,789.83,3427.0,8.1291,
+PSO,Normal Urban Traffic,901.36,860.32,3381.5,9.0136,
+DQN (Proposed),Normal Urban Traffic,731.47,719.37,3578.0,7.3147,
+Webster Fixed-Time,Peak Hour (Rush),2604.41,2529.47,3461.0,26.0441,
+Random Control,Peak Hour (Rush),2807.54,2840.36,3508.0,28.0754,
+Fuzzy Logic,Peak Hour (Rush),2686.14,2635.21,3550.0,26.8614,
+Genetic Algorithm,Peak Hour (Rush),2749.72,2660.11,3452.0,27.4972,
+PSO,Peak Hour (Rush),2879.8,2749.14,3381.5,28.798,
+DQN (Proposed),Peak Hour (Rush),2632.32,2542.74,3612.0,26.3232,
+Webster Fixed-Time,Emergency Vehicle Present,882.79,856.33,3450.0,8.8279,27.9
+Random Control,Emergency Vehicle Present,807.17,763.6,3507.5,8.0717,34.8
+Fuzzy Logic,Emergency Vehicle Present,784.14,775.9,3518.0,7.8414,5.4
+Genetic Algorithm,Emergency Vehicle Present,816.77,787.95,3462.0,8.1677,11.5
+PSO,Emergency Vehicle Present,837.21,800.13,3383.5,8.3721,10.5
+DQN (Proposed),Emergency Vehicle Present,777.78,764.43,3527.5,7.7778,2.3
+Webster Fixed-Time,Adverse Weather (Rain/Fog),1006.05,730.83,2589.1,10.0605,
+Random Control,Adverse Weather (Rain/Fog),966.52,715.41,2658.0,9.6652,
+Fuzzy Logic,Adverse Weather (Rain/Fog),956.5,694.68,2633.9,9.565,
+Genetic Algorithm,Adverse Weather (Rain/Fog),874.75,641.53,2597.4,8.7475,
+PSO,Adverse Weather (Rain/Fog),1027.86,737.08,2537.1,10.2786,
+DQN (Proposed),Adverse Weather (Rain/Fog),934.69,695.47,2668.8,9.3469,
+Webster Fixed-Time,Night Conditions,17.84,12.53,2177.4,0.1784,
+Random Control,Night Conditions,22.83,15.05,2133.3,0.2283,
+Fuzzy Logic,Night Conditions,28.16,20.38,2279.0,0.2816,
+Genetic Algorithm,Night Conditions,19.69,14.1,2095.5,0.1969,
+PSO,Night Conditions,15.47,11.01,2122.9,0.1547,
+DQN (Proposed),Night Conditions,21.99,15.51,2124.0,0.2199,

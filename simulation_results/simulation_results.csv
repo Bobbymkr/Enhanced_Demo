@@ -1,0 +1,31 @@
+Algorithm,Scenario,Avg Wait Time (s),Avg Queue Length,Throughput (veh/hr),Fuel Index,Emerg Clear (s)
+Webster Fixed-Time,Normal Urban Traffic,864.58,837.22,3449.0,8.6458,
+Random Control,Normal Urban Traffic,806.03,807.94,3508.5,8.0603,
+Fuzzy Logic,Normal Urban Traffic,779.75,771.89,3533.0,7.7975,
+Genetic Algorithm,Normal Urban Traffic,761.28,742.84,3427.5,7.6128,
+PSO,Normal Urban Traffic,868.8,829.29,3376.5,8.688,
+DQN (Proposed),Normal Urban Traffic,786.26,774.63,3565.0,7.8626,
+Webster Fixed-Time,Peak Hour (Rush),2715.51,2636.98,3462.0,27.1551,
+Random Control,Peak Hour (Rush),2624.39,2656.79,3481.0,26.2439,
+Fuzzy Logic,Peak Hour (Rush),2646.66,2596.67,3484.0,26.4666,
+Genetic Algorithm,Peak Hour (Rush),2645.82,2550.43,3494.0,26.4582,
+PSO,Peak Hour (Rush),2828.21,2696.32,3378.0,28.2821,
+DQN (Proposed),Peak Hour (Rush),2659.95,2623.7,3583.0,26.5995,
+Webster Fixed-Time,Emergency Vehicle Present,835.47,809.23,3450.0,8.3547,28.3
+Random Control,Emergency Vehicle Present,826.86,791.15,3568.0,8.2686,34.9
+Fuzzy Logic,Emergency Vehicle Present,767.45,743.6,3513.5,7.6745,5.7
+Genetic Algorithm,Emergency Vehicle Present,842.65,811.18,3458.0,8.4265,12.1
+PSO,Emergency Vehicle Present,847.46,806.73,3373.0,8.4746,10.2
+DQN (Proposed),Emergency Vehicle Present,726.66,716.13,3600.0,7.2666,3.6
+Webster Fixed-Time,Adverse Weather (Rain/Fog),956.3,693.5,2583.2,9.563,
+Random Control,Adverse Weather (Rain/Fog),1038.46,757.33,2588.8,10.3846,
+Fuzzy Logic,Adverse Weather (Rain/Fog),1095.26,798.24,2659.2,10.9526,
+Genetic Algorithm,Adverse Weather (Rain/Fog),932.99,682.18,2576.8,9.3299,
+PSO,Adverse Weather (Rain/Fog),1038.19,743.58,2535.9,10.3819,
+DQN (Proposed),Adverse Weather (Rain/Fog),832.19,617.53,2649.1,8.3219,
+Webster Fixed-Time,Night Conditions,19.44,14.5,2161.8,0.1944,
+Random Control,Night Conditions,21.94,14.35,2152.4,0.2194,
+Fuzzy Logic,Night Conditions,25.77,17.97,2091.6,0.2577,
+Genetic Algorithm,Night Conditions,19.62,13.94,2151.9,0.1962,
+PSO,Night Conditions,15.9,11.33,2091.8,0.159,
+DQN (Proposed),Night Conditions,20.92,13.84,2058.9,0.2092,

@@ -461,9 +461,9 @@ class ComprehensiveTestSuite:
             results["tests_run"] += 1
             required_constants = ['defaultRed', 'defaultYellow', 'defaultGreen', 'noOfSignals']
             sys.path.append("Code/YOLO/darkflow")
-            import simulation
+            import tests.basic_simulation as basic_simulation
             
-            if all(hasattr(simulation, const) for const in required_constants):
+            if all(hasattr(basic_simulation, const) for const in required_constants):
                 results["tests_passed"] += 1
                 results["details"]["constants_exist"] = "PASS"
             else:
@@ -472,7 +472,7 @@ class ComprehensiveTestSuite:
             
             # Test TrafficSignal class
             results["tests_run"] += 1
-            if hasattr(simulation, 'TrafficSignal'):
+            if hasattr(basic_simulation, 'TrafficSignal'):
                 results["tests_passed"] += 1
                 results["details"]["traffic_signal_class"] = "PASS"
             else:
@@ -481,7 +481,7 @@ class ComprehensiveTestSuite:
             
             # Test Vehicle class
             results["tests_run"] += 1
-            if hasattr(simulation, 'Vehicle'):
+            if hasattr(basic_simulation, 'Vehicle'):
                 results["tests_passed"] += 1
                 results["details"]["vehicle_class"] = "PASS"
             else:
@@ -591,10 +591,10 @@ class ComprehensiveTestSuite:
             # Check if both modules can be imported
             sys.path.append("Code/YOLO/darkflow")
             import vehicle_detection_modern
-            import simulation
+            import tests.basic_simulation as basic_simulation
             
             # Verify data structures are compatible
-            if hasattr(vehicle_detection_modern, 'detectVehicles') and hasattr(simulation, 'setTime'):
+            if hasattr(vehicle_detection_modern, 'detectVehicles') and hasattr(basic_simulation, 'setTime'):
                 results["tests_passed"] += 1
                 results["details"]["data_flow"] = "PASS"
             else:

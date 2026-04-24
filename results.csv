@@ -1,0 +1,31 @@
+Scenario,Algorithm,avg_wait_time,avg_queue,throughput,emerg_clearance
+normal,Webster Fixed-Time,741.0,18.36,3473,
+normal,Fuzzy Logic,719.4,17.51,3476,
+normal,Genetic Algorithm,696.1,17.08,3552,
+normal,PSO,684.6,16.94,3628,
+normal,GNN,679.3,16.6,3578,
+normal,DQN+YOLOv8 (Proposed),640.1,15.89,3734,
+peak_hour,Webster Fixed-Time,1835.5,41.15,3143,
+peak_hour,Fuzzy Logic,1732.3,39.12,3198,
+peak_hour,Genetic Algorithm,1731.5,38.25,3213,
+peak_hour,PSO,1694.7,38.18,3171,
+peak_hour,GNN,1677.2,36.45,3140,
+peak_hour,DQN+YOLOv8 (Proposed),1526.3,33.33,3403,
+emergency,Webster Fixed-Time,768.9,18.82,3500,27.5
+emergency,Fuzzy Logic,732.3,18.14,3532,24.7
+emergency,Genetic Algorithm,717.9,17.86,3575,22.1
+emergency,PSO,697.3,17.38,3545,20.6
+emergency,GNN,690.5,17.69,3561,16.1
+emergency,DQN+YOLOv8 (Proposed),611.6,14.72,3721,2.4
+rain_fog,Webster Fixed-Time,909.4,14.68,2792,
+rain_fog,Fuzzy Logic,853.7,14.17,2842,
+rain_fog,Genetic Algorithm,835.4,13.73,2898,
+rain_fog,PSO,830.6,13.59,3004,
+rain_fog,GNN,817.9,13.15,2929,
+rain_fog,DQN+YOLOv8 (Proposed),749.6,12.29,3012,
+night,Webster Fixed-Time,312.1,6.26,2137,
+night,Fuzzy Logic,299.2,5.78,2166,
+night,Genetic Algorithm,289.8,5.8,2239,
+night,PSO,287.7,5.71,2222,
+night,GNN,287.4,5.65,2245,
+night,DQN+YOLOv8 (Proposed),266.7,5.29,2312,

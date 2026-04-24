@@ -21,137 +21,137 @@ class TestSimulationConstants(unittest.TestCase):
     
     def test_01_default_signal_times(self):
         """Test: Line 27-31 - Default signal timing constants"""
-        import simulation
+        import tests.basic_simulation as basic_simulation
         
         # Test that default constants are properly defined
-        self.assertEqual(simulation.defaultRed, 150)
-        self.assertEqual(simulation.defaultYellow, 5)
-        self.assertEqual(simulation.defaultGreen, 20)
-        self.assertEqual(simulation.defaultMinimum, 10)
-        self.assertEqual(simulation.defaultMaximum, 60)
+        self.assertEqual(basic_simulation.defaultRed, 150)
+        self.assertEqual(basic_simulation.defaultYellow, 5)
+        self.assertEqual(basic_simulation.defaultGreen, 20)
+        self.assertEqual(basic_simulation.defaultMinimum, 10)
+        self.assertEqual(basic_simulation.defaultMaximum, 60)
         
         # Test that values are reasonable
-        self.assertGreater(simulation.defaultRed, 0)
-        self.assertGreater(simulation.defaultYellow, 0)
-        self.assertGreater(simulation.defaultGreen, 0)
-        self.assertLess(simulation.defaultMinimum, simulation.defaultMaximum)
+        self.assertGreater(basic_simulation.defaultRed, 0)
+        self.assertGreater(basic_simulation.defaultYellow, 0)
+        self.assertGreater(basic_simulation.defaultGreen, 0)
+        self.assertLess(basic_simulation.defaultMinimum, basic_simulation.defaultMaximum)
     
     def test_02_signal_configuration(self):
         """Test: Line 33-40 - Signal configuration variables"""
-        import simulation
+        import tests.basic_simulation as basic_simulation
         
         # Test signal configuration
-        self.assertEqual(simulation.noOfSignals, 4)
-        self.assertIsInstance(simulation.signals, list)
-        self.assertEqual(len(simulation.signals), 0)  # Initially empty
+        self.assertEqual(basic_simulation.noOfSignals, 4)
+        self.assertIsInstance(basic_simulation.signals, list)
+        self.assertEqual(len(basic_simulation.signals), 0)  # Initially empty
         
         # Test current signal tracking
-        self.assertIsInstance(simulation.currentGreen, int)
-        self.assertIsInstance(simulation.nextGreen, int)
-        self.assertIsInstance(simulation.currentYellow, int)
+        self.assertIsInstance(basic_simulation.currentGreen, int)
+        self.assertIsInstance(basic_simulation.nextGreen, int)
+        self.assertIsInstance(basic_simulation.currentYellow, int)
         
         # Test initial values
-        self.assertEqual(simulation.currentGreen, 0)
-        self.assertEqual(simulation.nextGreen, 1)
-        self.assertEqual(simulation.currentYellow, 0)
+        self.assertEqual(basic_simulation.currentGreen, 0)
+        self.assertEqual(basic_simulation.nextGreen, 1)
+        self.assertEqual(basic_simulation.currentYellow, 0)
     
     def test_03_vehicle_timing_constants(self):
         """Test: Line 43-47 - Vehicle timing constants"""
-        import simulation
+        import tests.basic_simulation as basic_simulation
         
         # Test vehicle timing constants
-        self.assertEqual(simulation.carTime, 2)
-        self.assertEqual(simulation.bikeTime, 1)
-        self.assertEqual(simulation.rickshawTime, 2.25)
-        self.assertEqual(simulation.busTime, 2.5)
-        self.assertEqual(simulation.truckTime, 2.5)
+        self.assertEqual(basic_simulation.carTime, 2)
+        self.assertEqual(basic_simulation.bikeTime, 1)
+        self.assertEqual(basic_simulation.rickshawTime, 2.25)
+        self.assertEqual(basic_simulation.busTime, 2.5)
+        self.assertEqual(basic_simulation.truckTime, 2.5)
         
         # Test that values are reasonable
-        for time_val in [simulation.carTime, simulation.bikeTime, simulation.rickshawTime, 
-                        simulation.busTime, simulation.truckTime]:
+        for time_val in [basic_simulation.carTime, basic_simulation.bikeTime, basic_simulation.rickshawTime, 
+                        basic_simulation.busTime, basic_simulation.truckTime]:
             self.assertGreater(time_val, 0)
             self.assertLess(time_val, 10)  # Should be reasonable
     
     def test_04_vehicle_count_variables(self):
         """Test: Line 49-55 - Vehicle count variables"""
-        import simulation
+        import tests.basic_simulation as basic_simulation
         
         # Test vehicle count variables
-        self.assertEqual(simulation.noOfCars, 0)
-        self.assertEqual(simulation.noOfBikes, 0)
-        self.assertEqual(simulation.noOfBuses, 0)
-        self.assertEqual(simulation.noOfTrucks, 0)
-        self.assertEqual(simulation.noOfRickshaws, 0)
-        self.assertEqual(simulation.noOfLanes, 2)
+        self.assertEqual(basic_simulation.noOfCars, 0)
+        self.assertEqual(basic_simulation.noOfBikes, 0)
+        self.assertEqual(basic_simulation.noOfBuses, 0)
+        self.assertEqual(basic_simulation.noOfTrucks, 0)
+        self.assertEqual(basic_simulation.noOfRickshaws, 0)
+        self.assertEqual(basic_simulation.noOfLanes, 2)
         
         # Test that all counts start at zero
-        count_vars = [simulation.noOfCars, simulation.noOfBikes, simulation.noOfBuses,
-                     simulation.noOfTrucks, simulation.noOfRickshaws]
+        count_vars = [basic_simulation.noOfCars, basic_simulation.noOfBikes, basic_simulation.noOfBuses,
+                     basic_simulation.noOfTrucks, basic_simulation.noOfRickshaws]
         for count in count_vars:
             self.assertEqual(count, 0)
     
     def test_05_vehicle_speeds(self):
         """Test: Line 60 - Vehicle speed dictionary"""
-        import simulation
+        import tests.basic_simulation as basic_simulation
         
         # Test speed dictionary structure
-        self.assertIsInstance(simulation.speeds, dict)
+        self.assertIsInstance(basic_simulation.speeds, dict)
         
         # Test that all vehicle types have speeds
         expected_vehicles = ['car', 'bus', 'truck', 'rickshaw', 'bike']
         for vehicle in expected_vehicles:
-            self.assertIn(vehicle, simulation.speeds)
-            self.assertIsInstance(simulation.speeds[vehicle], (int, float))
-            self.assertGreater(simulation.speeds[vehicle], 0)
+            self.assertIn(vehicle, basic_simulation.speeds)
+            self.assertIsInstance(basic_simulation.speeds[vehicle], (int, float))
+            self.assertGreater(basic_simulation.speeds[vehicle], 0)
         
         # Test relative speeds (bike should be fastest, trucks slowest)
-        self.assertGreater(simulation.speeds['bike'], simulation.speeds['car'])
-        self.assertGreater(simulation.speeds['car'], simulation.speeds['bus'])
+        self.assertGreater(basic_simulation.speeds['bike'], basic_simulation.speeds['car'])
+        self.assertGreater(basic_simulation.speeds['car'], basic_simulation.speeds['bus'])
     
     def test_06_coordinate_systems(self):
         """Test: Line 63-64 - Coordinate system initialization"""
-        import simulation
+        import tests.basic_simulation as basic_simulation
         
         # Test coordinate dictionaries
-        self.assertIsInstance(simulation.x, dict)
-        self.assertIsInstance(simulation.y, dict)
+        self.assertIsInstance(basic_simulation.x, dict)
+        self.assertIsInstance(basic_simulation.y, dict)
         
         # Test that all directions are present
         expected_directions = ['right', 'down', 'left', 'up']
         for direction in expected_directions:
-            self.assertIn(direction, simulation.x)
-            self.assertIn(direction, simulation.y)
-            self.assertIsInstance(simulation.x[direction], list)
-            self.assertIsInstance(simulation.y[direction], list)
-            self.assertEqual(len(simulation.x[direction]), 3)  # 3 lanes
-            self.assertEqual(len(simulation.y[direction]), 3)
+            self.assertIn(direction, basic_simulation.x)
+            self.assertIn(direction, basic_simulation.y)
+            self.assertIsInstance(basic_simulation.x[direction], list)
+            self.assertIsInstance(basic_simulation.y[direction], list)
+            self.assertEqual(len(basic_simulation.x[direction]), 3)  # 3 lanes
+            self.assertEqual(len(basic_simulation.y[direction]), 3)
     
     def test_07_vehicle_data_structure(self):
         """Test: Line 66 - Vehicle data structure"""
-        import simulation
+        import tests.basic_simulation as basic_simulation
         
         # Test vehicles dictionary
-        self.assertIsInstance(simulation.vehicles, dict)
+        self.assertIsInstance(basic_simulation.vehicles, dict)
         
         # Test structure for each direction
         for direction in ['right', 'down', 'left', 'up']:
-            self.assertIn(direction, simulation.vehicles)
-            self.assertIsInstance(simulation.vehicles[direction], dict)
+            self.assertIn(direction, basic_simulation.vehicles)
+            self.assertIsInstance(basic_simulation.vehicles[direction], dict)
             
             # Test lanes and crossed counter
             for lane in [0, 1, 2]:
-                self.assertIn(lane, simulation.vehicles[direction])
-                self.assertIsInstance(simulation.vehicles[direction][lane], list)
-            self.assertIn('crossed', simulation.vehicles[direction])
-            self.assertIsInstance(simulation.vehicles[direction]['crossed'], int)
+                self.assertIn(lane, basic_simulation.vehicles[direction])
+                self.assertIsInstance(basic_simulation.vehicles[direction][lane], list)
+            self.assertIn('crossed', basic_simulation.vehicles[direction])
+            self.assertIsInstance(basic_simulation.vehicles[direction]['crossed'], int)
 
 class TestTrafficSignalClass(unittest.TestCase):
     """Test TrafficSignal class"""
     
     def setUp(self):
         """Set up test fixtures"""
-        import simulation
-        self.TrafficSignal = simulation.TrafficSignal
+        import tests.basic_simulation as basic_simulation
+        self.TrafficSignal = basic_simulation.TrafficSignal
     
     def test_01_class_initialization(self):
         """Test: Line 92-99 - TrafficSignal class initialization"""
@@ -189,9 +189,9 @@ class TestVehicleClass(unittest.TestCase):
         self.mock_pygame.image.load = Mock(return_value=Mock(get_rect=Mock(return_value=Mock(width=50, height=30))))
         
         with patch.dict('sys.modules', {'pygame': self.mock_pygame}):
-            import simulation
-            self.Vehicle = simulation.Vehicle
-            self.simulation = simulation
+            import tests.basic_simulation as basic_simulation
+            self.Vehicle = basic_simulation.Vehicle
+            self.simulation = basic_simulation
     
     def test_01_vehicle_initialization(self):
         """Test: Line 102-156 - Vehicle class initialization"""
@@ -279,8 +279,8 @@ class TestVehicleMovement(unittest.TestCase):
         """Set up test fixtures"""
         self.mock_pygame = Mock()
         with patch.dict('sys.modules', {'pygame': self.mock_pygame}):
-            import simulation
-            self.simulation = simulation
+            import tests.basic_simulation as basic_simulation
+            self.simulation = basic_simulation
     
     def test_01_right_direction_movement(self):
         """Test: Line 162-189 - Right direction movement logic"""
@@ -346,8 +346,8 @@ class TestSignalTiming(unittest.TestCase):
     
     def setUp(self):
         """Set up test fixtures"""
-        import simulation
-        self.simulation = simulation
+        import tests.basic_simulation as basic_simulation
+        self.simulation = basic_simulation
     
     def test_01_settime_function(self):
         """Test: Line 280-323 - setTime function logic"""
@@ -412,7 +412,7 @@ class TestSimulationPerformance(unittest.TestCase):
     
     def test_01_frame_rate_performance(self):
         """Test that simulation maintains acceptable frame rate"""
-        import simulation
+        import tests.basic_simulation as basic_simulation
         
         # Mock pygame components
         with patch('pygame.init'):
@@ -426,7 +426,7 @@ class TestSimulationPerformance(unittest.TestCase):
                             # Simulate initialization
                             signals = []
                             for i in range(4):
-                                signal = simulation.TrafficSignal(0, 5, 20, 10, 60)
+                                signal = basic_simulation.TrafficSignal(0, 5, 20, 10, 60)
                                 signals.append(signal)
                             
                             end_time = time.time()
@@ -468,7 +468,7 @@ class TestSimulationEdgeCases(unittest.TestCase):
     
     def test_01_no_vehicles_scenario(self):
         """Test simulation with no vehicles"""
-        import simulation
+        import tests.basic_simulation as basic_simulation
         
         # Mock empty vehicle data
         with patch('simulation.vehicles', {
@@ -479,12 +479,12 @@ class TestSimulationEdgeCases(unittest.TestCase):
         }):
             # Test that system handles empty vehicle lists
             for direction in ['right', 'down', 'left', 'up']:
-                self.assertEqual(len(simulation.vehicles[direction][0]), 0)
-                self.assertEqual(simulation.vehicles[direction]['crossed'], 0)
+                self.assertEqual(len(basic_simulation.vehicles[direction][0]), 0)
+                self.assertEqual(basic_simulation.vehicles[direction]['crossed'], 0)
     
     def test_02_max_vehicles_scenario(self):
         """Test simulation with maximum vehicles"""
-        import simulation
+        import tests.basic_simulation as basic_simulation
         
         # Create maximum vehicle scenario
         max_vehicles = 50
@@ -492,17 +492,17 @@ class TestSimulationEdgeCases(unittest.TestCase):
             'right': {0: [Mock() for _ in range(max_vehicles)], 1: [], 2: [], 'crossed': 0}
         }):
             # Test that system handles many vehicles
-            self.assertEqual(len(simulation.vehicles['right'][0]), max_vehicles)
+            self.assertEqual(len(basic_simulation.vehicles['right'][0]), max_vehicles)
     
     def test_03_signal_failure_scenario(self):
         """Test behavior when signal fails"""
-        import simulation
+        import tests.basic_simulation as basic_simulation
         
         # Test with invalid signal state
         with patch('simulation.currentGreen', 10):  # Invalid signal index
             with patch('simulation.noOfSignals', 4):
                 # System should handle invalid signal gracefully
-                self.assertGreaterEqual(simulation.currentGreen, 0)
+                self.assertGreaterEqual(basic_simulation.currentGreen, 0)
                 # In real implementation, this would have bounds checking
 
 if __name__ == '__main__':
